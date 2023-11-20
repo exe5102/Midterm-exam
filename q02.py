@@ -20,15 +20,15 @@ print(Line)
 
 # 叫出字典每筆資料和對應的值
 for key in dict:
-    data = "{:,}".format(dict[key])  # 格式化處理將每千位元插入逗號
-    print(f"員工{key:<6}的薪資為{data:>7}")  # 員工名字向左對齊為6，薪資向右對齊寬度為7
+    # data = "{:,}".format(dict[key])  # 格式化處理將每千位元插入逗號
+    print(f"員工{key:<6}的薪資為{dict[key]:>7,}")  # 員工名字向左對齊為6，薪資向右對齊寬度為7
 
-total_data = "{:,}".format(total)  # 格式化處理將每千位元插入逗號
-print(f"{Line}\n合計薪資： {total_data:>13}")  # 向右對齊寬度為13
+# total_data = "{:,}".format(total)  # 格式化處理將每千位元插入逗號
+print(f"{Line}\n合計薪資： {total:>14,}")  # 向右對齊寬度為13
 
 
 if len(dict) > 0:  # 有無資料判斷
     average_salary = total / len(dict)  # 平均計算
-    print(f"平均薪資： {average_salary:>16.2f}\n{Endline}")  # 列印文字向右對齊寬度為16取小數點後2位
+    print(f"平均薪資： {average_salary:>17,.2f}\n{Endline}")  # 列印文字向右對齊寬度為16取小數點後2位
 else:
-    print(f"平均薪資： {"0.00":>16}")  # 列印文字向右對齊寬度為16取小數點後2位
+    print(f"平均薪資： {"0.00":>17}\n{Endline}")  # 列印文字向右對齊寬度為16取小數點後2位
